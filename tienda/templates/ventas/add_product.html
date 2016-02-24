@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{%block title%}Agregar Productos{%endblock%}
+{%block h1%}
+	<h1>Agregar Productos</h1>
+{%endblock%}
+
+{%block content%}
+	<form action="" method="POST"> {% csrf_token %}
+		{% include 'ventas/formSnipet.html' %}
+		<input type="submit" value="Add" class="btn btn-primary btn-lg"/>
+		<a href="{% url 'product' %}" class="btn btn-warning btn-lg" >Volver</a>
+	</form>
+	<span class="help-block">
+	{{ info }}	
+	</span>
+{%endblock%}
